@@ -4,7 +4,7 @@ require "yanoinstapaper_api/version"
 
 Gem::Specification.new do |s|
   s.name        = "yanoinstapaper_api"
-  s.version     = YanoinstapaperApi::VERSION
+  s.version     = YanoInstapaper::VERSION
   s.authors     = ["Jason Yanowitz"]
   s.email       = ["yanoinstapaper_api@me.jasonyanowitz.com"]
   s.homepage    = "https://github.com/yanowitz/yanoinstapaper_api"
