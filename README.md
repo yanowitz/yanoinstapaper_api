@@ -18,7 +18,7 @@
 
 
  bookmarks = ip.bookmarks.list  # default is to fetch everything
- bookmarks = ip.bookmarks.list(:limit => 50)  # default is to fetch everything
+ bookmarks = ip.bookmarks.list(:limit => 50)
 ```
 
 ## Documentation
@@ -28,7 +28,16 @@
   http://www.instapaper.com/api/full
 
   The code simply maps method chains onto API calls:
-  ip.bookmarks.list # turns into: ip.call('bookmarks/list')
+
+```ruby
+  ip.bookmarks.list 
+```
+
+ turns into
+
+```ruby
+ip.access('bookmarks/list')
+```
 
   This call either throws an exception (if the API returns a JSON
   error), JSON-marshalled hashes, or, in the instace of fetching a
@@ -39,6 +48,9 @@
 ```ruby
   ip.foobar.baz
 ```
+  
+  will blindly try to access the Instapaper endpoint 'foobar/baz' and then blow up with a 404.  But that at least means that additions to the API shouldn't require modification of this library.  Onward to the future!
+
 
 ## Acknowledgements
 
@@ -57,5 +69,5 @@ Due).
 
 ## Copyright
 
-This software is covered by the GNU Lesser General Public License 
+This software is covered by the GNU Lesser General Public License (see LICENSE.md) and copyright Jason Yanowitz &copy; 2011
 
